@@ -211,3 +211,99 @@ const newNames = ['marcos', 'mario', 'john']
 console.log(names.concat(newNames))
 */
 //spread operator
+/*
+const names = ['ryan', 'joe', 'maria']
+const newNames = ['marcos', 'mario', 'john']
+
+//console.log([...names, ...newNames])
+
+const user ={
+  name:"ryan",
+  lastname: "rya"
+}
+
+const address={
+  street:'main street 123',
+  city:'bogota'
+}
+
+const userInfo ={
+  ...user,
+  ...address
+}
+
+console.log(userInfo)
+*/
+//Ecmascript modules
+// import {add, multiply,active,points,title} from './add.js';
+
+// console.log(active, points, title)
+// console.log(add(10,20))
+// console.log(multiply(10,20))
+//importar por defecto
+// import addModule from "./add.js"
+// console.log(addModule)
+/*
+//optional chaining
+// const person ={
+//   name:'ryan',
+//   adress:{
+//     city:'london'
+//   }
+// }
+
+//console.log(person.adress.city)
+//console.log(person.location.city) = console.log(person.undefined.city)
+
+// const person ={
+//   name:'ryan',
+//   adress:{
+//     city:'london'
+//   },
+//   location:{}
+// }
+// if (person.location) {
+//   console.log(person.location.city)
+// }
+
+const person ={
+  name:'ryan',
+  adress:{
+    city:'london'
+  },
+}
+  console.log(person.location?.city)
+*/
+
+//Async/Await
+const ul = document.createElement("ul")
+
+// fetch('https://jsonplaceholder.typicode.com/posts').then(function (response) {
+//   return response.json()
+// }).then(function (data){
+//   console.log(data)
+//   data.forEach(function(post) {
+//     const li = document.createElement("li")
+//     li.innerText = post.title
+//     ul.append(li)
+//   })
+//   document.body.append(ul)
+// })
+
+//   console.log('linea 2')
+
+async function loadData(){
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const data = await response.json()
+     data.forEach(function(post) {
+     const li = document.createElement("li")
+    li.innerText = post.title
+     ul.append(li)
+   })
+   document.body.append(ul)
+}
+  loadData()
+  console.log('linea 2')
+
+
+
